@@ -1,0 +1,23 @@
+{
+    "author": "serv-inc",
+    "description": "Blocks or allows youtube videos based on keywords",
+    "engines": {
+	"firefox": "38.0a1 49.0",
+	"fennec": "38.0a1 49.0"
+    },
+    "keywords": [
+	"jetpack"
+    ],
+    "license": "MIT",
+    "main": "index.js",
+    "name": "ytb",
+    "preferences": [ {
+	"name": "allowKWRegex",
+	"title": "Regular Expression for Allowed Keywords",
+	"description": "the page's keywords are matched against this regex",
+	"type": "string",
+	"value": "pray|matt redman"
+    }],
+    "title": "YouTube-Block",
+    "version": "0.0.4"
+}

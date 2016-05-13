@@ -1,0 +1,20 @@
+* YouTube-Block
+Blocks or allows youtube videos based on tags
+** versions
+*** 0.0.1
+    initial release
+*** 0.0.3
+    - encoding did no good and failed sometimes
+    - regex was case-sensitive
+*** 0.0.4
+    - was not youtube-specific
+** plan
+   1) set intersection for tags
+   2) allow user to set tags
+      1) via preferences
+	 - how to do with array?
+      2) best via panel
+   3) block message
+   4) test youtube-update check for tags
+      - maybe ask so if non-working
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <head>
+    <title>Blocked page</title>
+  </head>
+  <body>
+    <h1>Page was blocked</h1>
+    <p>The video was blocked, as its tags</p>
+
+    <p id="tags" style="font-family: monospace"></p>
+
+    <p>did not match the allowed tags. (see preferences for allowed
+      tags).
+    </p>
+  </body>
+<script>
+  document.getElementById("tags").textContent = unescape(document.location.href.split('?')[1].split('=')[1]);
+      </script>
+</html>

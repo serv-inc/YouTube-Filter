@@ -14,6 +14,10 @@ let pm = require("sdk/page-mod").PageMod({
     onAttach: function(worker) {
 	worker.port.on("keywords", function(keywords) {
 	    console.log('keywords: ' + keywords);
+
+	    if ( keywords === '' && Simple.prefs.allowEmptyKW ) {
+		return;
+	    }
 			    
 	    if ( !allowed.test(keywords) ) {
                 worker.tab.url = self.data.url("blocked.html") + '?' +

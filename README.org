@@ -8,13 +8,11 @@ Blocks or allows youtube videos based on tags
     - regex was case-sensitive
 *** 0.0.4
     - was not youtube-specific
+*** 0.0.6
+    - failed on empty keywords
 ** plan
-   1) set intersection for tags
-   2) allow user to set tags
-      1) via preferences
-	 - how to do with array?
-      2) best via panel
-   3) block message
-   4) test youtube-update check for tags
-      - maybe ask so if non-working
+   1) allow user to set tags via panel
+   2) test youtube-update check for tags
+      - listen to DOMSubsetModified event
+
 

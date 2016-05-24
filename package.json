@@ -2,8 +2,8 @@
     "author": "serv-inc",
     "description": "Blocks or allows youtube videos based on keywords",
     "engines": {
-	"firefox": "38.0a1 49.0",
-	"fennec": "38.0a1 49.0"
+	"firefox": "38.0a1 *",
+	"fennec": "38.0a1 *"
     },
     "keywords": [
 	"jetpack"
@@ -25,5 +25,5 @@
 	"value": false
     } ],
     "title": "YouTube-Block",
-    "version": "0.0.6"
+    "version": "0.1.2"
 }

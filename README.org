@@ -1,18 +1,13 @@
 * YouTube-Block
 Blocks or allows youtube videos based on tags
 ** versions
-*** 0.0.1
-    initial release
-*** 0.0.3
-    - encoding did no good and failed sometimes
-    - regex was case-sensitive
-*** 0.0.4
-    - was not youtube-specific
-*** 0.0.6
-    - failed on empty keywords
+   0) [@0] pre-release
+      0) [@0] initial
+      1) youtube auto-update
 ** plan
    1) allow user to set tags via panel
    2) test youtube-update check for tags
       - listen to DOMSubsetModified event
+   3) test if maybe regex more/less specific
 
 

@@ -1,7 +1,5 @@
 let ytplayer = unsafeWindow.ytplayer;
 
-let location = document.location.href;
-
 function sendKeywords() {
     if ( typeof ytplayer !== "undefined" &&
 	 ( ytplayer.config &&

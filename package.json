@@ -5,6 +5,13 @@
 	"firefox": "38.0a1 *",
 	"fennec": "38.0a1 *"
     },
+    "jshintConfig": {
+	"predef": ["require", "exports", "self"],
+	"module": true,
+	"esversion": 6,
+	"strict": "global",
+	"browser": true
+    },
     "keywords": [
 	"jetpack"
     ],

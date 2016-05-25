@@ -1,15 +1,17 @@
 * YouTube-Block
-Blocks or allows youtube videos based on tags
+Blocks or allows youtube videos based on their keywords
 ** versions
    0) [@0] pre-release
       0) [@0] initial
       1) youtube auto-update
 ** plan
-   1) show web site tags in panel
-      2) make clickable
+   1) history api: make back button go to previous page
+      - and add link to current blocked page in block.html
+   2) show web site tags in panel
+      1) make clickable
    3) allow user to set tags via panel
-   4) test youtube-update check for tags
-      - listen to DOMSubsetModified event
-   5) test if maybe regex more/less specific
+   4) test if maybe regex more/less specific
+      - maybe use matchpatterns?
+      - or youtube.com (with _.com_)
 
 

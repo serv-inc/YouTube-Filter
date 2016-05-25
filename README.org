@@ -5,9 +5,11 @@ Blocks or allows youtube videos based on tags
       0) [@0] initial
       1) youtube auto-update
 ** plan
-   1) allow user to set tags via panel
-   2) test youtube-update check for tags
+   1) show web site tags in panel
+      2) make clickable
+   3) allow user to set tags via panel
+   4) test youtube-update check for tags
       - listen to DOMSubsetModified event
-   3) test if maybe regex more/less specific
+   5) test if maybe regex more/less specific
 
 

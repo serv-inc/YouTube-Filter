@@ -3,14 +3,14 @@ let ytplayer = unsafeWindow.ytplayer;
 let location = document.location.href;
 
 function sendKeywords() {
-    if ( typeof ytplayer !== "undefined") {
+    if ( typeof ytplayer !== "undefined" &&
+	 ( ytplayer.config &&
+	   ytplayer.config.args &&
+	   ytplayer.config.args.keywords ) ) {
 	self.port.emit('keywords',
 		       ( ytplayer.config && ytplayer.config.args &&
-			 ytplayer.config.args.keywords) ||
-		       '');
-    }//  else {
-    // console.log('typeof ytplayer: ' + typeof ytplayer);
-    // }
+			 ytplayer.config.args.keywords) );
+    }
 }
 
 sendKeywords();

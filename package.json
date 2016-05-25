@@ -16,14 +16,14 @@
 	"title": "Regular Expression for Allowed Keywords",
 	"description": "the page's keywords are matched against this regex",
 	"type": "string",
-	"value": "pray|matt redman"
+	"value": "good news|praise"
     }, {
 	"name": "allowEmptyKW",
 	"title": "Allow Videos without Keywords",
 	"description": "There are some pages without keywords. Allow these?",
 	"type": "bool",
 	"value": false
-    } ],
+    }],
     "title": "YouTube-Block",
-    "version": "0.1.2"
+    "version": "0.1.6", "@BUMP": "lint, README.org version, git commit, upload"
 }

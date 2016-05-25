@@ -9,7 +9,7 @@ Simple.on("allowKWRegex", function() {
 
 let pm = require("sdk/page-mod").PageMod({
 //    include: /.*/,
-    include: /.*youtube.*watch.*/,
+    include: /.*youtube.*/,
     contentScriptFile: "./page.js",
     onAttach: function(worker) {
 	worker.port.on("keywords", function(keywords) {

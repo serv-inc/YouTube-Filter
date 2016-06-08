@@ -1,6 +1,6 @@
 {
     "author": "serv-inc",
-    "description": "Blocks or allows youtube videos based on keywords",
+    "description": "Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.",
     "engines": {
 	"firefox": "38.0a1 *",
 	"fennec": "38.0a1 *"
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "main": "index.js",
-    "name": "ytb",
+    "name": "ytf",
     "preferences": [ {
 	"name": "allowKWRegex",
 	"title": "Regular Expression for Allowed Keywords",
@@ -31,6 +31,6 @@
 	"type": "bool",
 	"value": false
     }],
-    "title": "YouTube-Block",
-    "version": "0.1.6", "@BUMP": "lint, README.org version, git commit, upload"
+    "title": "YouTube-Filter",
+    "version": "1.0.1", "@++": "lint, README.org version, git commit, upload"
 }

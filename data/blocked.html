@@ -10,11 +10,15 @@
 
     <p id="tags" style="font-family: monospace"></p>
 
-    <p>did not match the allowed tags. (see preferences for allowed
-      tags).
-    </p>
+    <p id="footer">did not match the allowed tags.</p>
+    <p>(see preferences for setting tags via regex and allowing no tags).</p>
   </body>
 <script>
-  document.getElementById("tags").textContent = unescape(document.location.href.split('?')[1].split('=')[1]);
+  let keywords = unescape(document.location.href.split('?')[1].split('=')[1]).replace('+', ' ', 'g');
+  if ( keywords ) {
+      document.getElementById("tags").textContent =  keywords;
+  } else {
+      document.getElementById("footer").textContent = "were empty.";
+  }
       </script>
 </html>

@@ -5,5 +5,4 @@ sign: clean
 	jpm -v sign --api-key $(USER) --api-secret $(PASS)
 
 clean:
-	rm install.rdf bootstrap.js 2>/dev/null || true
-	mv *.xpi local/xpi || true
+	rm install.rdf bootstrap.js *xpi 2>/dev/null || true

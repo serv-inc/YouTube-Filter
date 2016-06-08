@@ -2,12 +2,10 @@ let ytplayer = unsafeWindow.ytplayer;
 
 function sendKeywords() {
     if ( typeof ytplayer !== "undefined" &&
-	 ( ytplayer.config &&
-	   ytplayer.config.args &&
-	   ytplayer.config.args.keywords ) ) {
-	self.port.emit('keywords',
-		       ( ytplayer.config && ytplayer.config.args &&
-			 ytplayer.config.args.keywords) );
+	 ( ytplayer.config && 
+	   ytplayer.config.args && 
+	   typeof ytplayer.config.args.keywords !== "undefined" ) ) {
+	self.port.emit('keywords', JSON.stringify(ytplayer.config.args.keywords));
     }
 }
 

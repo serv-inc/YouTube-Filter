@@ -1,17 +1,15 @@
-* YouTube-Block
-Blocks or allows youtube videos based on their keywords
+* YouTube-Filter
+Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.
 ** versions
-   0) [@0] pre-release
-      0) [@0] initial
-      1) youtube auto-update
+   1) Release
+      0) [@0] Bugfix
+	 1) did not handle ~keywords = ''~ correctly
 ** plan
    1) history api: make back button go to previous page
       - and add link to current blocked page in block.html
    2) show web site tags in panel
       1) make clickable
    3) allow user to set tags via panel
-   4) test if maybe regex more/less specific
+   4) test if maybe include-regex more/less specific
       - maybe use matchpatterns?
       - or youtube.com (with _.com_)
-
-

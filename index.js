@@ -13,7 +13,8 @@ let pm = require("sdk/page-mod").PageMod({
     contentScriptFile: "./page.js",
     onAttach: function(worker) {
 	worker.port.on("keywords", function(keywords) {
-	    // console.log('keywords: ' + keywords);
+	    //	    console.log('keywords: ' + keywords);
+	    keywords = JSON.parse(keywords);
 
 	    if ( keywords === '' && Simple.prefs.allowEmptyKW ) {
 		return;

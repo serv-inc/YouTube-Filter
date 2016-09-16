@@ -11,6 +11,7 @@ function sendKeywords() {
 
 sendKeywords();
 
+//// Youtube updates page without reload, watch for that, too
 // courtesy of https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 let observer = new MutationObserver(function(mutations) {
     sendKeywords();

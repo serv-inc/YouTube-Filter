@@ -6,14 +6,15 @@
   </head>
   <body>
     <h1>Page was blocked</h1>
-    <p>The video was blocked, as its tags</p>
+    <p>The video was blocked, as its keywords</p>
 
     <p id="tags" style="font-family: monospace"></p>
 
-    <p id="footer">did not match the allowed tags.</p>
+    <p id="footer">matched the blocked tags and did not match the
+    allowed tags.</p>
     <p>(see preferences for setting tags via regex and allowing no tags).</p>
   </body>
-<script>
+  <script>
   let keywords = unescape(document.location.href.split('?')[1].split('=')[1]).replace('+', ' ', 'g');
   if ( keywords ) {
       document.getElementById("tags").textContent =  keywords;

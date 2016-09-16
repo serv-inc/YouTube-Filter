@@ -6,7 +6,7 @@
 	"fennec": "38.0a1 *"
     },
     "jshintConfig": {
-	"predef": ["require", "exports", "self"],
+	"predef": ["require", "exports"],
 	"module": true,
 	"esversion": 6,
 	"strict": "global",
@@ -18,10 +18,14 @@
     "license": "MIT",
     "main": "index.js",
     "name": "ytf",
+    "permissions": {
+        "multiprocess": true,
+        "private-browsing": true
+    },
     "preferences": [ {
 	"name": "allowKWRegex",
 	"title": "Regular Expression for Allowed Keywords",
-	"description": "the page's keywords are matched against this regex",
+	"description": "If this regex matches the page's keywords, they are allowed regardless of blocked keywords.",
 	"type": "string",
 	"value": "good news|praise"
     }, {
@@ -30,7 +34,13 @@
 	"description": "There are some pages without keywords. Allow these?",
 	"type": "bool",
 	"value": false
+    }, {
+	"name": "blockKWRegex",
+	"title": "Regular Expression for Blocked Keywords",
+	"description": "Block these keywords if allowed keywords do not occur. The default behavior (.*) is a whitelist, where all pages are blocked if they do not contain the allowed keywords. Change this regex to only block certain keywords.",
+	"type": "string",
+	"value": ".*"
     }],
     "title": "YouTube-Filter",
-    "version": "1.0.1", "@++": "lint, README.org version, git commit, upload"
+    "version": "0.3.0", "@++": "lint, README.org version, git commit, upload"
 }

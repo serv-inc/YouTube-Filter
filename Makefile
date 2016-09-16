@@ -1,8 +1,16 @@
 USER=$(shell cat local/moz_uid)
 PASS=$(shell cat local/moz_pass)
 
-sign: clean
+all: sign
+
+sign: lint clean
 	jpm -v sign --api-key $(USER) --api-secret $(PASS)
 
 clean:
-	rm install.rdf bootstrap.js *xpi 2>/dev/null || true
+	rm *xpi 2>/dev/null || true
+
+lint: clean
+	jshint index.js data/page.js
+
+xpi: clean
+	jpm xpi

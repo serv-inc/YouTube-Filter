@@ -1,3 +1,5 @@
+/* globals self */
+/* globals unsafeWindow */
 let ytplayer = unsafeWindow.ytplayer;
 
 function sendKeywords() {

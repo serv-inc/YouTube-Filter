@@ -35,7 +35,7 @@ let pm = PM.PageMod({
 });
 
 let blockV = PM.PageMod({
-    include: /.*youtube\.com\/v\/.*/,
+    include: /.*youtube\.com\/(v|embed)\/.*/,
     onAttach: function(worker) {
         worker.tab.url = self.data.url("blocked_v.html");
     }

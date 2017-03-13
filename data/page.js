@@ -2,6 +2,7 @@
 /* globals unsafeWindow */
 let ytplayer = unsafeWindow.ytplayer;
 
+// td: better split here and send as array via JSON
 function sendKeywords() {
     if ( typeof ytplayer !== "undefined" &&
 	 ( ytplayer.config && 

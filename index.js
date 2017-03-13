@@ -3,6 +3,7 @@ const self = require("sdk/self");
 const PM = require("sdk/page-mod");
 const Simple = require('sdk/simple-prefs');
 
+// should restart mod each time, but reloads should mitigate this for now
 let allowed = RegExp(Simple.prefs.allowKWRegex, "i");
 Simple.on("allowKWRegex", function() {
     allowed = RegExp(Simple.prefs.allowKWRegex, "i");
@@ -10,6 +11,10 @@ Simple.on("allowKWRegex", function() {
 let blocked = RegExp(Simple.prefs.blockKWRegex, "i");
 Simple.on("blockKWRegex", function() {
     blocked = RegExp(Simple.prefs.blockKWRegex, "i");
+});
+let empty_ok = Simple.prefs.allowEmptyKW;
+Simple.on("allowEmptyKW", function() {
+    empty_ok = Simple.prefs.allowEmptyKW;
 });
 
 let pm = PM.PageMod({
@@ -21,7 +26,7 @@ let pm = PM.PageMod({
 	    //	    console.log('keywords: ' + keywords);
 	    keywords = JSON.parse(keywords);
 
-	    if ( keywords === '' && Simple.prefs.allowEmptyKW ) {
+	    if ( keywords === '' && empty_ok ) {
 		return;
 	    }
 			    
@@ -36,6 +41,7 @@ let pm = PM.PageMod({
 
 let blockV = PM.PageMod({
     include: /.*youtube\.com\/(v|embed)\/.*/,
+    attachTo: ["top"],
     onAttach: function(worker) {
         worker.tab.url = self.data.url("blocked_v.html");
     }

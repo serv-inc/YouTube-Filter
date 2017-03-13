@@ -12,5 +12,5 @@ clean:
 lint: clean
 	jshint index.js data/page.js
 
-xpi: clean
+xpi: clean lint
 	jpm xpi

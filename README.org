@@ -8,6 +8,8 @@ Most YouTube Videos have keywords. If they are allowed, all is fine. Else, block
          1) lacked multiprocess + private browsing flags
       3) Played videos without keywords
          1) had allowed another way to play videos without keywords
+         2) broke pages with embedded videos
+
 ** plan
    1) allow user to click tags on blocked list to allow them
    2) history api: make back button go to previous page

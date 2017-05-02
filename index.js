@@ -21,6 +21,7 @@ let pm = PM.PageMod({
 //    include: /.*/,
     include: /.*youtube.*/,
     contentScriptFile: "./page.js",
+    contentStyleFile: "./style.css",
     onAttach: function(worker) {
 	worker.port.on("keywords", function(keywords) {
 	    //	    console.log('keywords: ' + keywords);

@@ -1,22 +1,21 @@
 * YouTube-Filter
 Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.
 ** versions
-   0) [@0] initial release
-      1) Bugfix
-	 1) did not handle ~keywords = ''~ correctly
-      2) Lacked blacklist
-         1) lacked multiprocess + private browsing flags
-      3) Played videos without keywords
-         1) had allowed another way to play videos without keywords
-         2) broke pages with embedded videos
-
-** plan
-   1) allow user to click tags on blocked list to allow them
-   2) history api: make back button go to previous page
-      - and add link to current blocked page in block.html
-   3) show web site tags in panel
-      1) make clickable
-   4) allow user to set tags via panel
-   5) test if maybe include-regex more/less specific
-      - maybe use matchpatterns?
-      - or youtube.com (with _.com_)
+*** 0.1
+**** Bugfix
+***** did not handle ~keywords = ''~ correctly
+*** 0.2.0
+**** Added
+     Lacked blacklist
+*** 0.2.1
+***** lacked multiprocess + private browsing flags
+*** 0.3.2
+**** Played videos without keywords
+***** had allowed another way to play videos without keywords
+***** broke pages with embedded videos
+*** 0.4.0
+**** Added/Fixed
+     Fullscreen mode did not trigger keyword block, as it does not
+     update these, so its button is made invisible, now.
+**** Fixed
+     There was no easy way to go back to before the blocked page.

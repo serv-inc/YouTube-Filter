@@ -42,5 +42,5 @@
 	"value": ".*"
     }],
     "title": "YouTube-Filter",
-    "version": "0.4.0", "@++": "lint, README.org version, git commit, upload"
+    "version": "0.4.1", "@++": "lint, README.org version, git commit, upload"
 }

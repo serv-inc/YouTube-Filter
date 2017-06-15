@@ -1,5 +1,8 @@
+"use strict";
 /* globals self */
 /* globals unsafeWindow */
+/* globals console */
+// licensed under the MPL 2.0 by (github.com/serv-inc)
 let ytplayer = unsafeWindow.ytplayer;
 
 // td: better split here and send as array via JSON
@@ -26,3 +29,15 @@ let config = { attributes: true,
 	       subtree: true };
 
 observer.observe(document.body, config);
+
+// redisable fullscreen
+function disableFullscreen() {
+    document.mozCancelFullScreen();
+    document.webkitCancelFullScreen();
+    document.safariCancelFullScreen();
+    document.cancelFullScreen();
+    console.log("fullscreen disabled by youtube-block-plugin (it does not allow filtering)");
+}
+document.addEventListener("mozfullscreenchange", function() {
+    disableFullscreen();
+});

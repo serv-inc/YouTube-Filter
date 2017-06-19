@@ -11,6 +11,7 @@ clean:
 
 lint: clean
 	jshint index.js data/page.js
+	python -m json.tool package.json > /dev/null
 
 xpi: clean lint
 	jpm xpi

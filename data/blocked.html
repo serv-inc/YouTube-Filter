@@ -15,7 +15,7 @@
     <p>(see preferences for setting tags via regex and allowing no tags).</p>
   </body>
   <script>
-  let keywords = unescape(document.location.href.split('?')[1].split('=')[1]).replace('+', ' ', 'g');
+  let keywords = decodeURI(document.location.href.split('?')[1].split('=')[1]).replace('+', ' ', 'g');
   if ( keywords ) {
       document.getElementById("tags").textContent =  keywords;
   } else {

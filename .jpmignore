@@ -5,5 +5,7 @@ local/
 *~
 test/
 Makefile
-ytb.xcf
-icon.xcf
+addon/
+meta/
+test
+plan.org

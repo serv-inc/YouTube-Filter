@@ -1,5 +1,9 @@
 * YouTube-Filter
 Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.
+
+
+[[https://addons.mozilla.org/de/firefox/addon/youtube-filter/][https://img.shields.io/amo/v/youtube-filter.svg]]
+[[https://chrome.google.com/webstore/detail/jsguardian/dcnjfkkecmhafmahafoemckgfbcpkfag][https://img.shields.io/chrome-web-store/v/dcnjfkkecmhafmahafoemckgfbcpkfag.svg]]
 ** Versions
 *** 0.5.0
 **** Lacked

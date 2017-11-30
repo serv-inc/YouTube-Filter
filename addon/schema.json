@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "properties": {
+    "whitelist": {
+      "description": "regex string of whitelist tags",
+      "type": "string"
+    }
+  }
+}

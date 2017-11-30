@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "ytf",  
+  "description": "Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.",
+  "version": "0.5.0",
+
+  "permissions": ["tabs", "*://youtube.com/*", "storage"],
+
+  "icons": { "128": "ytf.png" },
+
+  "background": {
+    "scripts": ["settings.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": [
+        "jquery-css-deprecated-dimensions-effects-event-alias-offset-sizzle-wrap.min.js",
+        "get-keywords.js"
+      ]
+    }
+  ],
+  "storage": {
+    "managed_schema": "schema.json"
+  },
+  "web_accessible_resources": ["script.js", "observe.js"]
+}

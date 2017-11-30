@@ -1,17 +1,11 @@
-USER=$(shell cat local/moz_uid)
-PASS=$(shell cat local/moz_pass)
+zip: lint
+	cd addon; zip ../ytf.zip *
 
-all: xpi
+lint:
+	ls addon/*.js | grep -v jquery | xargs jshint
+	! grep 'browser\.' addon/*.js
+	# grep '"use strict";' addon/*.js > /dev/null checked by jshint
+	python -m json.tool addon/manifest.json > /dev/null
+	python -m json.tool addon/schema.json > /dev/null
+	tidy -eq addon/blockpage.html
 
-sign: lint clean
-	jpm -v sign --api-key $(USER) --api-secret $(PASS)
-
-clean:
-	rm *xpi 2>/dev/null || true
-
-lint: clean
-	jshint index.js data/page.js
-	python -m json.tool package.json > /dev/null
-
-xpi: clean lint
-	jpm xpi

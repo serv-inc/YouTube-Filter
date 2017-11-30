@@ -1,6 +1,9 @@
 * YouTube-Filter
 Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.
-** versions
+** Versions
+*** 0.5.0
+**** Lacked
+     - support for Chromium due to old API
 *** 0.4.2
 **** Fixed
      - block page showed non-english tags wrongly

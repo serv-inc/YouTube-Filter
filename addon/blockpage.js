@@ -10,11 +10,13 @@
 
 let keywords = decodeURIComponent(window.location.search.slice(1)).split(',');
 if ( keywords ) {
-  let append='';
+  const TAGS = document.getElementById("tags");
   keywords.forEach((el) => {
-    append += '<span class="keyword">' + el.replace(/\+/g, ' ') + '</span>';
+    var span = document.createElement("span");
+    span.className = "keyword";
+    span.textContent = el.replace(/\+/g, ' ');
+    TAGS.appendChild(span);
   });
-  document.getElementById("tags").innerHTML = append;
 } else {
   document.getElementById("footer").textContent = "were empty.";
 }

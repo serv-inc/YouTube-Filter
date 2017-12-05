@@ -5,6 +5,9 @@ Most YouTube Videos have keywords. If they are allowed, all is fine. Else, block
 [[https://addons.mozilla.org/de/firefox/addon/youtube-filter/][https://img.shields.io/amo/v/youtube-filter.svg]]
 [[https://chrome.google.com/webstore/detail/jsguardian/dcnjfkkecmhafmahafoemckgfbcpkfag][https://img.shields.io/chrome-web-store/v/dcnjfkkecmhafmahafoemckgfbcpkfag.svg]]
 ** Versions
+*** 0.5.1
+**** Had
+     unclean code that used =innerHTML= (thanks to Mozilla automated review)
 *** 0.5.0
 **** Lacked
      - support for Chromium due to old API
@@ -38,3 +41,7 @@ Most YouTube Videos have keywords. If they are allowed, all is fine. Else, block
 *** 0.1
 **** Fixed
      did not handle ~keywords = ''~ correctly
+** Credits
+   - reduced jquery by http://projects.jga.me/jquery-builder/
+     - recreated at
+   https://raw.githubusercontent.com/jgallen23/jquery-builder/0.7.0/dist/2.1.1/jquery-css-deprecated-dimensions-effects-event-alias-offset-sizzle-wrap.min.js

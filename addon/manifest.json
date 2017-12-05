@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "ytf",  
   "description": "Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.",
-  "version": "0.5.1",
+  "version": "0.5.2",
 
   "permissions": ["tabs", "*://youtube.com/*", "storage"],
 

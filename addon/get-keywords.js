@@ -10,6 +10,9 @@
 let div = $("<div>");
 div.load(window.location.href, (response, status, xhr) => {
   let pos = div.text().indexOf("keywords");
+  if ( pos == -1 ) {
+    return;
+  }
   pos = div.text().indexOf(":", pos);
   pos = div.text().indexOf('"', pos) +1;
   let keywords = div.text().slice(pos, div.text().indexOf('"', pos));

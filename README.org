@@ -5,6 +5,8 @@ Most YouTube Videos have keywords. If they are allowed, all is fine. Else, block
 [[https://addons.mozilla.org/de/firefox/addon/youtube-filter/][https://img.shields.io/amo/v/youtube-filter.svg]]
 [[https://chrome.google.com/webstore/detail/jsguardian/dcnjfkkecmhafmahafoemckgfbcpkfag][https://img.shields.io/chrome-web-store/v/dcnjfkkecmhafmahafoemckgfbcpkfag.svg]]
 ** Versions
+*** 0.6.2
+**** Was not working on Chrome / with new YouTube design
 *** 0.5.2
 **** Failed
      on youtube front page

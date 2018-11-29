@@ -7,6 +7,7 @@
 /* globals XMLHttpRequest */
 /* globals setTimeout */
 // licensed under the MPL 2.0 by (github.com/serv-inc)
+// version 2018-11-29.2
 
 /* OPTIONS CODE */
 class Settings {

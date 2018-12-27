@@ -1,15 +1,18 @@
 "use strict";
+/** @fileoverview extract keywords from location */
 /* jshint esversion: 6, strict: global */
-/* globals chrome */
-/* globals document */
-/* globals XMLHttpRequest */
-/* globals window */
+/* globals chrome, document, XMLHttpRequest, window */
 // licensed under the MPL 2.0 by (github.com/serv-inc)
 
 // hack: chromium does not update ytplayer.config.args.keywords on new video
+// alert( window.location.href );  // test correct page
 var xhr = new XMLHttpRequest();
 xhr.onload = function() {
-  chrome.runtime.sendMessage(getKeywords(this.responseText));
+  chrome.runtime.sendMessage(JSON.stringify(
+    {
+      "keywords": getKeywords(this.responseText),
+      "page": window.location.href
+    }));
 };
 xhr.open("GET", window.location.href);
 xhr.send();

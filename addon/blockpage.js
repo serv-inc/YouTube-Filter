@@ -1,8 +1,6 @@
 "use strict";
 /* jshint esversion: 6, strict: global */
-/* globals document */
-/* globals URLSearchParams */
-/* globals window */
+/* globals document, URLSearchParams, window */
 // licensed under the MPL 2.0 by (github.com/serv-inc)
 
 /**
@@ -11,7 +9,9 @@
 
 let params = new URLSearchParams(window.location.search);
 
-// ====== set page ====  // fix this as it is known to content script
+
+// ====== set page ====  
+// TODO [#S] fix this as it is known to content script
 // document.getElementById("page").textContent = params.get("page");
 
 // set keywords

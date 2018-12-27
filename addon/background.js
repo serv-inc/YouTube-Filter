@@ -1,10 +1,7 @@
 "use strict";
-// checks keywords against whitelist
-/* jshint esversion: 6, strict: global */
-/* jshint laxbreak: true */
-/* globals chrome */
-/* globals getSettings */
-/* globals URLSearchParams */
+/** @fileoverview checks youtube-keywords against whitelist */
+/* jshint esversion: 6, strict: global, laxbreak: true */
+/* globals chrome, getSettings, URLSearchParams */
 // licensed under the MPL 2.0 by (github.com/serv-inc)
 
 chrome.tabs.onUpdated.addListener(
@@ -12,17 +9,20 @@ chrome.tabs.onUpdated.addListener(
     if (typeof(changeInfo.url) !== "undefined") {
       //alert(changeInfo.url);
       if (/http.:.*youtube.com/.test(changeInfo.url)) {
-        chrome.tabs.executeScript({file: "get-keywords.js"});
+        chrome.tabs.executeScript(tabId, {file: "/get-keywords.js"});
       }
     }
   }
 );
 
-chrome.runtime.onMessage.addListener(function(keywords, sender, sendResponse) {
+// sent by get-keywords.js
+chrome.runtime.onMessage.addListener(function(json, sender, sendResponse) {
+  let result = JSON.parse(json);
+  console.error(result);
   if ( ! /\/(channel|user)\//.test(sender.url)
-       && keywords.length > 0  // some day re-make as config if exclude empty
-       && ! getSettings().whitelistRegExp.test(keywords) ) {
-    setBlockPage(sender, keywords);
+       && result.keywords.length > 0
+       && ! getSettings().whitelistRegExp.test(result.keywords) ) {
+    setBlockPage(sender, result.keywords);
   }
 });
 

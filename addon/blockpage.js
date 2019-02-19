@@ -38,6 +38,16 @@ params.get("whitelist").split("|").forEach((el) => {
   WHITELIST.appendChild(item);
 });
 
+// set forbidden
+const WHITELIST = document.getElementById("forbidden");
+
+params.get("blacklist").split("|").forEach((el) => {
+  var item = document.createElement("li");
+  item.className = "keyword";
+  item.textContent = el;
+  WHITELIST.appendChild(item);
+});
+
 
 // tmp until history API to ignore last yt vid
 // if ( window.history.length <= 2 ) {

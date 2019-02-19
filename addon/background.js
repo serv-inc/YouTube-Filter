@@ -18,10 +18,10 @@ chrome.tabs.onUpdated.addListener(
 // sent by get-keywords.js
 chrome.runtime.onMessage.addListener(function(json, sender, sendResponse) {
   let result = JSON.parse(json);
-  console.error(result);
-  if ( ! /\/(channel|user)\//.test(sender.url)
+  if ( /\/(watch|embed)/.test(sender.url)
        && result.keywords.length > 0
-       && ! getSettings().whitelistRegExp.test(result.keywords) ) {
+       && (! getSettings().whitelistRegExp.test(result.keywords)
+           || RegExp(getSettings().blacklist, 'gi').test(result.keywords)) ) {
     setBlockPage(sender, result.keywords);
   }
 });
@@ -30,6 +30,7 @@ function setBlockPage(sender, keywords) {
   var params = new URLSearchParams();
   params.append("keywords", keywords);
   params.append("whitelist", getSettings().whitelist);
+  params.append("blacklist", getSettings().blacklist);
   params.append("page", sender.url);
   chrome.tabs.update(sender.tab.id,
 		     {'url': chrome.extension.getURL('blockpage.html')

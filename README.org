@@ -6,7 +6,9 @@ Most YouTube Videos have keywords. If they are allowed, all is fine. Else, block
 [[https://chrome.google.com/webstore/detail/jsguardian/dcnjfkkecmhafmahafoemckgfbcpkfag][https://img.shields.io/chrome-web-store/v/dcnjfkkecmhafmahafoemckgfbcpkfag.svg]]
 ** Versions
 *** 0.6.3
-**** Failed on "open in new tab"
+**** Failed in multiple ways
+     - on new tab
+     - at beginning on same page
 *** 0.6.2
 **** Was not working on Chrome / with new YouTube design
 *** 0.5.2

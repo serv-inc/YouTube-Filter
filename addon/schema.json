@@ -2,7 +2,11 @@
   "type": "object",
   "properties": {
     "whitelist": {
-      "description": "regex string of whitelist tags",
+      "description": "regex string of allowed tags",
+      "type": "string"
+    },
+    "blacklist": {
+      "description": "regex string of forbidden tags, overrides whitelist",
       "type": "string"
     }
   }

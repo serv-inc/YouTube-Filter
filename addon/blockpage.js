@@ -4,9 +4,8 @@
 // licensed under the MPL 2.0 by (github.com/serv-inc)
 
 /**
- * @fileoverview sets keywords from Url-part
+ * @fileoverview sets keywords, white- and blacklist from Url-search-params
  */
-
 let params = new URLSearchParams(window.location.search);
 
 /** adds list item with text <code>name</code> to parent <code>addTo</code> */

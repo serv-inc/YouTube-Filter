@@ -14,39 +14,31 @@ let params = new URLSearchParams(window.location.search);
 // TODO [#S] fix this as it is known to content script
 // document.getElementById("page").textContent = params.get("page");
 
-// set keywords
-if ( params.has("keywords") ) {
-  const TAGS = document.getElementById("tags");
-  //  TAGS.textContent = params.get("keywords");
-  JSON.parse(params.get("keywords")).forEach((el) => {
+/** adds list item with text <code>name</code> to parent <code>addTo</code> */
+function addLi(content, addTo) {
     var item = document.createElement("li");
     item.className = "keyword";
-    item.textContent = el;
-    TAGS.appendChild(item);
-  });
+    item.textContent = content;
+    addTo.appendChild(item);
+}
+
+// set keywords - is not a regex, so needs to be treated differently
+if ( params.has("keywords") ) {
+  const TAGS = document.getElementById("keywords");
+  //  TAGS.textContent = params.get("keywords");
+  JSON.parse(params.get("keywords")).forEach((el) => addLi(el, TAGS));
 } else {
   document.getElementById("footer").textContent = "were empty.\nAllowed keywords:";
 }
 
-// set allowed
-const WHITELIST = document.getElementById("allowed");
+/** adds search parameters of <code>ulName</code> to same name (ul)element */
+function addUl(ulName) {
+  const TARGET = document.getElementById(ulName);  
+  params.get(ulName).split("|").forEach((el) => addLi(el, TARGET));
+}
 
-params.get("whitelist").split("|").forEach((el) => {
-  var item = document.createElement("li");
-  item.className = "keyword";
-  item.textContent = el;
-  WHITELIST.appendChild(item);
-});
-
-// set forbidden
-const WHITELIST = document.getElementById("forbidden");
-
-params.get("blacklist").split("|").forEach((el) => {
-  var item = document.createElement("li");
-  item.className = "keyword";
-  item.textContent = el;
-  WHITELIST.appendChild(item);
-});
+addUl("whitelist");
+addUl("blacklist");
 
 
 // tmp until history API to ignore last yt vid

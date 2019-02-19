@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "YouTube Keyword Filter",
   "description": "Most YouTube Videos have keywords. If they are allowed, all is fine. Else, blocks with a page displaying the keywords.",
-  "version": "0.7.0",
+  "version": "0.7.1",
 
   "permissions": ["tabs", "*://*.youtube.com/*", "storage"],
 
